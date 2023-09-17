@@ -14,8 +14,24 @@ const Navbar = async ({})=>{
                 Text Simlarity 1.0
             </Link>
 
-            <div className=''>
-                {/* <ThemeToggle /> */}
+            <div className='md:hidden'>
+                <ThemeToggle />
+            </div>
+
+            <div className='hidden md:flex gap-4'>
+                <ThemeToggle/>
+                <Link 
+                    href='/documentation'
+                    className={buttonVariants({ variants: 'ghost' })}
+                >
+                Documentation
+                </Link>
+                {session ? (
+                    <>
+                        <Link className={buttonBariants({ variants:'ghost'})}
+                        href='/dashbord'/>
+                    </>
+                ): <SignInButton/>}
             </div>
         </div>
     </div>)
