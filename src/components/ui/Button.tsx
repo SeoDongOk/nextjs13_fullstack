@@ -1,5 +1,6 @@
-import { cva } from 'class-variance-authority';
-import {FC} from 'react';
+import { VariantProps, cva } from 'class-variance-authority';
+import {ButtonHTMLAttributes, FC, forwardRef} from 'react';
+import { cn } from '../lib/utils';
 
 interface ButtonProps {
 
@@ -17,14 +18,22 @@ const buttonVariants = cva('active:scale-95 inline-flex items center justify-cen
             default:'h-10 py-2 px-2',
             sm:'h-9 px-2 rounded-md',
             lg:'h-11 px-8 rounded-md',
-        }
+        },
+    },
+    defaultVariants:{
+        variant: 'default',
+        size:'default'
     }
 }
 );
 
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants>{ isLoading?:boolean}
 
-const Button: FC<ButtonProps> = ({})=>{
-    return <div>Button</div>
-}
+
+const Button: FC<ButtonProps> = forwardRef<HTMLButtonElement, ButtonProps>(({
+    className, children, variant, isLoading, size, ...props 
+},ref)=>{
+    return <button className={cn(buttonVariants({variant, size, className}))} ref={ref} disabled={isLoading} {...props}></button>
+})
 
 export default Button
