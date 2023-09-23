@@ -1,4 +1,5 @@
 "use client"
+//client page
 
 import { FC } from "react";
 
