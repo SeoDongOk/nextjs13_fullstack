@@ -12,15 +12,15 @@ const SignOutButton :FC<SignOutButtonProps> =({})=>{
 
     const signInWithGoogle = async ()=>{
         setIsLoading(true);
-        
+
         try{
             await signOut()
         }catch(error){
-            toast({
-                title:'error signing in ',
-                message:'please try again later',
-                type:'error'
-            })
+            // toast({
+            //     title:'error signing in ',
+            //     message:'please try again later',
+            //     type:'error'
+            // })
         }
     }
 

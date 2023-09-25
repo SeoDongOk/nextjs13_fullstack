@@ -15,11 +15,11 @@ const SignInButton :FC<SignInButtonProps> =({})=>{
         try{
             await signIn('google')
         }catch(error){
-            toast({
-                title:'error signing in ',
-                message:'please try again later',
-                type:'error'
-            })
+            // toast({
+            //     title:'error signing in ',
+            //     message:'please try again later',
+            //     type:'error'
+            // })
         }
     }
 

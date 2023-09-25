@@ -3,10 +3,11 @@ import Link from 'next/link'
 import { FC } from 'react'
 import { buttonVariants } from './ui/Button'
 import SignInButton from '@/components/SignInButton'
+import SignOutButton from '@/components/SingOutButton'
 
-interface NavbarProps {}
+// interface NavbarProps {}
 
-const Navbar = async ({})=>{
+const Navbar = async ()=>{
     const session = await getServerSession()
 
     //buttonBariants, ThemeToggle, SignInButton is not defined yet
@@ -18,11 +19,11 @@ const Navbar = async ({})=>{
             </Link>
 
             <div className='md:hidden'>
-                <ThemeToggle />
+                {/* <ThemeToggle /> */}
             </div>
 
             <div className='hidden md:flex gap-4'>
-                <ThemeToggle/>
+                {/* <ThemeToggle/> */}
                 <Link 
                     href='/documentation'
                     className={buttonVariants({ variant: 'ghost' })}
