@@ -14,6 +14,13 @@ const SignInButton :FC<SignInButtonProps> =({})=>{
     const signInWithGoogle = async ()=>{
         setIsLoading(true);
         try{
+            // //test code
+            // toast({
+            //     title:'error signing in ',
+            //     message:'please try again later',
+            //     type:'error'
+            // })
+            // //
             await signIn('google')
         }catch(error){
             toast({
