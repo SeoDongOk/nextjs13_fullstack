@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import {LargeHeading} from "@/ui/LargeHeading"
+import LargeHeading from "@/ui/LargeHeading"
 
 
 import type { Metadata } from 'next';
