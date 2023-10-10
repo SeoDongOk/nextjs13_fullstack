@@ -1,6 +1,12 @@
 import { FC } from "react";
+import { Tabs, TabsList, TabsTrigger } from "./ui/Tabs";
 
 const DocumentationTabs: FC = ()=>{
-    return<div>DocumentationTabs</div>
+    return <Tabs defaultValue="nodejs">
+        <TabsList>
+            <TabsTrigger value="nodejs">NodeJS</TabsTrigger>
+            <TabsTrigger value="python">Python</TabsTrigger>
+        </TabsList>
+    </Tabs>
 }
 export default DocumentationTabs;
