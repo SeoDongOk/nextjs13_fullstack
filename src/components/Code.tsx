@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import {type Language} from "prism-react-renderer"
 import { useTheme } from "next-themes";
 
@@ -19,6 +19,17 @@ const Code:FC<CodeProps> = ({
 }) =>{
     const {} = useTheme()
     const [text,setText] = useState(animated? '':code)
+
+    useEffect(()=>{
+        if(show && animated){
+            let i =0
+            setTimeout(()=>{
+                const intervalId = setInterval(()=>{
+                    setText(code.slice(0,i))
+                },15)
+            },animationDelay || 150)
+        }
+    },[])
     return <div>Code</div>
 }
 
