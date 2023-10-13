@@ -11,7 +11,7 @@ const DocumentationTabs: FC = ()=>{
         </TabsList>
         <TabsContent value="nodejs">
             {/* <SimpleBar></SimpleBar> */}
-            <Code/> 
+            {/* <Code/>  */}
         </TabsContent>
         <TabsContent value="python"></TabsContent>
     </Tabs>
