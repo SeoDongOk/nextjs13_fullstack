@@ -1,6 +1,9 @@
+'use client';
 import { FC, useEffect, useState } from 'react';
 import { type Language } from 'prism-react-renderer';
 import { useTheme } from 'next-themes';
+import darkTheme from 'prism-react-renderer';
+import lightTheme from 'prism-react-renderer';
 
 interface CodeProps {
   code: string;
@@ -17,7 +20,7 @@ const Code: FC<CodeProps> = ({
   animated,
   animationDelay,
 }) => {
-  const {} = useTheme();
+  const { theme: applicationTheme } = useTheme();
   const [text, setText] = useState(animated ? '' : code);
 
   useEffect(() => {
@@ -29,7 +32,13 @@ const Code: FC<CodeProps> = ({
         }, 15);
       }, animationDelay || 150);
     }
-  }, []);
+  }, [code, show, animated, animationDelay]);
+
+  //number of lines
+  const lines = text.split(/\r\n|\r|\n/);
+
+  const theme = applicationTheme === 'light' ? lightTheme : darkTheme;
+
   return <div>Code</div>;
 };
 
