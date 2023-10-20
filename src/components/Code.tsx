@@ -1,9 +1,10 @@
 'use client';
 import { FC, useEffect, useState } from 'react';
-import { type Language } from 'prism-react-renderer';
+import { Highlight, type Language } from 'prism-react-renderer';
 import { useTheme } from 'next-themes';
 import darkTheme from 'prism-react-renderer';
 import lightTheme from 'prism-react-renderer';
+import defaultProps from 'prism-react-renderer';
 
 interface CodeProps {
   code: string;
@@ -39,7 +40,14 @@ const Code: FC<CodeProps> = ({
 
   const theme = applicationTheme === 'light' ? lightTheme : darkTheme;
 
-  return <div>Code</div>;
+  return (
+    <Highlight
+      {...defaultProps}
+      code={text}
+      language={langage}
+      theme={theme}
+    ></Highlight>
+  );
 };
 
 export default Code;
