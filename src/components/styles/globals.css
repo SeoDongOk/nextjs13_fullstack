@@ -1,6 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dark .three-d {
+  text-shadow: 0px 5px 0px #533519;
+}
+
+.three-d {
+  text-shadow: none;
+}
+
+.dark .simplebar-scollbar::before {
+  background-color: white;
+}
 /* 
 :root {
   --foreground-rgb: 0, 0, 0;
