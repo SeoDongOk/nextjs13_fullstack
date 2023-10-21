@@ -3,6 +3,7 @@ import LargeHeading from '@/ui/LargeHeading';
 
 import type { Metadata } from 'next';
 import Paragraph from '@/components/ui/Paragraph';
+import DocumentationTabs from '@/components/DocumentationTab';
 
 export const metadata: Metadata = {
   title: 'Similarity API | Documentation',
