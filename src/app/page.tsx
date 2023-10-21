@@ -5,6 +5,8 @@ import Paragraph from '../components/ui/Paragraph';
 import { Metadata } from 'next';
 import LargeHeading from '@/components/ui/LargeHeading';
 
+import 'simplebar-react/dist/simplebar.min.css';
+
 export const metadata: Metadata = {
   title: 'Similarity API | Home',
   description: 'Fee & open-source text similarity API',
