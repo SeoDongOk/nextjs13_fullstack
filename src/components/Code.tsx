@@ -45,8 +45,10 @@ const Code: FC<CodeProps> = ({
       {...defaultProps}
       code={text}
       language={langage}
-      theme={theme}
-    ></Highlight>
+      // theme={theme}
+    >
+      {({ className, tokens, getLineProps, getTokenProps }) => <pre></pre>}
+    </Highlight>
   );
 };
 
