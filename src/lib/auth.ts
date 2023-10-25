@@ -1,5 +1,5 @@
 import { NextAuthOptions } from 'next-auth';
-import db from './db';
+import { db } from './db';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import GoogleProvider from 'next-auth/providers/google';
 
@@ -29,7 +29,7 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   callbacks: {
-   session({ token, session }) {
+    session({ token, session }) {
       if (token) {
         session.user.id = token.id;
         session.user.name = token.name;
@@ -38,8 +38,8 @@ export const authOptions: NextAuthOptions = {
       }
       return session;
     },
-    async jwt({token, user}) {
-      const dbUser = await db.
-    }
+    async jwt({ token, user }) {
+      const dbUser = await db;
+    },
   },
 };
