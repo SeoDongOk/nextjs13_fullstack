@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 };
 const page = async ({}) => {
   const user = await getServerSession(authOptions);
+  //fix me
   if (!user) return notfound();
 
   const apiKey = await db.apiKey.findFirst({
